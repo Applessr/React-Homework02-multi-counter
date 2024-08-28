@@ -1,13 +1,22 @@
 function App() {
     const [counters, setCounters] = React.useState([
-        {id: Date.now(), number: 0},
+        {id: 1, number: 0},
     ]);
  
     const addCounter = () => {
-        const newCounter = {id: Date.now(), number: 0};  
+        const newCounter = {id: Math.round(Math.random()*1000) , number: 0};  
         const newCounters = [...counters, newCounter];  
         setCounters(newCounters);
     }
+
+    const plusAll = () => {
+        const newCounters = counters.map(counter => ({
+            ...counter, 
+            number: counter.number + 1
+        }));
+        console.log(newCounters);
+        setCounters(newCounters);
+    };
 
     const updateCounter = (id, n) => {
         let idx = counters.findIndex(el => el.id === id);
@@ -17,17 +26,20 @@ function App() {
         console.log(newCounters)
         setCounters(newCounters);
     };
+
     
     const delCounter = (id) => {
         const newCounters = counters.filter(counter => counter.id !== id);
         setCounters(newCounters);
-
     };
 
     return (
         <div className='app'>
             <h1 className="show-sum">Sum = {counters.reduce((acc, el) => acc + el.number, 0)} </h1> 
-            <button className="btn-add" onClick={addCounter}>Add Counter</button>
+            <div className="flexBtn">
+                <button className="btn-add" onClick={addCounter}>Add Counter</button>
+                <button className="btn-plusOne" onClick={plusAll}> + 1 </button>
+            </div>
             <hr />
             {counters.map(el => (
                 <Counter key={el.id} item={el} updateCounter={updateCounter} delCounter={delCounter} />

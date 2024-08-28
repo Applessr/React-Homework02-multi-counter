@@ -1,53 +1,66 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 50vh;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #17153B;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flexBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2;
+}
+.btn-add {
+  width: 20vh;
+  height: 30px;
+  background: #C8ACD6;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.btn-plusOne {
+  width: 20vh;
+  height: 30px;
+  background: #C8ACD6;
+  border: none;
+  border-radius: 5px;
+}
+.counter {
+  margin-top: 8px;
+  width: 400px;
+  height: 50px;
+  display: flex;
+  text-align: center;
+  align-items: baseline;
+  background: #C8ACD6;
+
+}
+
+.counter > * {
+  height: 100%;
+  flex:1;
+  font-size: 32px;
   
-  body {
-    min-height: 50vh;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    color: #17153B;
-  }
-  .app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .btn-add {
-    width: 30vh;
-    height: 30px;
-    background: #C8ACD6;
-    border: none;
-    border-radius: 5px;
-  }
-  .counter {
-    margin-top: 8px;
-    width: 400px;
-    height: 50px;
-    display: flex;
-    text-align: center;
-    align-items: baseline;
-    background: #C8ACD6;
-  
-  }
-  
-  .counter > * {
-    height: 100%;
-    flex:1;
-    font-size: 32px;
-    
-  }
-  .btn {
-    border: 1px solid #342f6966;
-    background:#433D8B ;
-    color: #d5c6dd;
-  }
-  .btn-delete {
-    background: #2E236C;
-  }
+}
+.btn {
+  border: 1px solid #342f6966;
+  background:#433D8B ;
+  color: #d5c6dd;
+}
+.btn-delete {
+  background: #2E236C;
+}
